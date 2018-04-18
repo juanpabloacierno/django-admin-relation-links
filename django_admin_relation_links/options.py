@@ -122,7 +122,7 @@ class AdminChangeLinksMixin():
     def get_link_field(self, url, label):
         return format_html('<a href="{}" class="changelink">{}</a>', url, label)
 
-    def get_change_link(self, instance, field):
+    def get_change_link(self, instance, field, **options):
         target_instance = getattr(instance, field)
         return self.get_link_field(
             reverse(
